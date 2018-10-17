@@ -16,6 +16,7 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
@@ -243,7 +244,8 @@ public class CircleProgressBar extends View {
         frontEndExtend.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                mProgress += 0.5;
+                mProgress += 1;
+                SystemClock.sleep(100);
                 if (mProgress > 100) {
                     mProgress = 0;
                 }
